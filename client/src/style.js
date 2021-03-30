@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { deepOrange } from '@material-ui/core/colors';
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => ({
     appBar: {
         backgroundColor: 'skyblue',
         borderRadius: 15,
@@ -17,4 +17,10 @@ export default makeStyles(() => ({
     image: {
         marginLeft: '15px',
     },
+    [theme.breakpoints.down('sm')]: {
+        mainContainer: {
+            flexDirection: "column-reverse"
+        }
+    }
+   
 }))

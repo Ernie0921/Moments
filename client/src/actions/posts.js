@@ -36,5 +36,27 @@ export const updatePost = (id, post) => async (dispatch) => {
         console.log(error)
     }
 }
+ 
 
+export const deletePost = (id) => async (dispatch) => {
+    try {
+        await api.deletePost(id);
+        
+        dispatch({ type: 'Delete', payload: id });
+    } catch (error) {
+        
+        console.log(error);
+    }
+}
+
+export const likePost = (id) => async (dispatch) => {
+    try {
+        const { data } = await api.likePost(id);
+        
+        dispatch({ type: 'UPDATE', payload: data })
+    } catch (error) {
+        
+        console.log(error)
+    }
+}
 //an action is just an object with the type and payload 
