@@ -9,7 +9,7 @@ import postRoutes from './routes/posts.js' //connecting the post.js file route
 
 const app = express() // initialize express
 
-app.use('/posts', postRoutes) // created middleware so /posts is used in all routes in postRoutes
+
 
 
 //MIDDLEWARE FOR BODY-PARSER
@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));//  setting up
 app.use(cors()) //(will enable cross origin request)
 
 
+app.use('/posts', postRoutes) // created middleware so /posts is used in all routes in postRoutes
 
 //connect to mongoDB atlas
 const CONNECTION_URL = 'mongodb+srv://admin:admin123@cluster0.bdtvh.mongodb.net/MOMENTS?retryWrites=true&w=majority'  //connecting to YOUR mongdb URI
