@@ -3,13 +3,13 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose'
 import cors from 'cors';
-
+import dotenv from 'dotenv';
 import postRoutes from './routes/posts.js' //connecting the post.js file route
 
 
 const app = express() // initialize express
 
-
+dotenv.config()
 
 
 //MIDDLEWARE FOR BODY-PARSER
@@ -21,8 +21,8 @@ app.use(cors()) //(will enable cross origin request)
 app.use('/posts', postRoutes) // created middleware so /posts is used in all routes in postRoutes
 
 //connect to mongoDB atlas
-const CONNECTION_URL = 'mongodb+srv://admin:admin123@cluster0.bdtvh.mongodb.net/MOMENTS?retryWrites=true&w=majority'  //connecting to YOUR mongdb URI
-const PORT = process.env.PORT || 5000;  //where this will run , in heroku it will use the PORT variable 
+const CONNECTION_URL = process.env.CONNECTION_URL // saved in env file for security 
+const PORT = process.env.PORT   //where this will run , in heroku it will use the PORT variable 
 
 //CONNECTING TO Database is a PROMISE FYI
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true }) //connect to you mongodb uri , the rest will stop errors and warning in terminal 
