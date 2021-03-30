@@ -9,6 +9,8 @@
 
  import App from './App'; //import the app function  from App.js file
 
+ import './index.css';
+
  const store = createStore(reducers, compose(applyMiddleware(thunk)))//
 
  ReactDOM.render(
