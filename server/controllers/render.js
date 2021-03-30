@@ -1,5 +1,6 @@
 //create all the handlers for our routes , what it will render for each route
-import PostMessage from '../models/postMessage.js' // importing the model so we can use it here 
+import PostMessage from '../models/postMessage.js' // importing the model so we can use it here
+import mongoose from 'mongoose'; 
 
 export const getPosts = async (req, res)=> {   // aync function to so it can search for data in database ayncronouse
     //res.send('THIS WORKS')
@@ -27,4 +28,25 @@ export const createPost = async (req, res)=> {  //with post request you have acc
     } catch (error) {
         res.status(409).json({ message: error.message})
     }
+}
+
+export const updatePost = async (req, res) => {
+    const { id: _id } = req.params;
+    const post = req.body;
+
+    if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No post with that id');
+
+    const updatedPost = await PostMessage.findByIdAndUpdate(_id, post, { new : true });
+
+    res.json(updatePost);
+}
+
+
+export const deletePost = async ( req, res) => {
+    const { id } = req.params;
+
+    if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No post with that id');
+
+    await PostMessage.findByIdAndRemove(id);
+    res.json( { message: ' Post deleted successfully '})
 }
