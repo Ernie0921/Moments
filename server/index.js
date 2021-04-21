@@ -18,14 +18,19 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));//  setting up
 app.use(cors()) //(will enable cross origin request)
 
 
+
 app.use('/posts', postRoutes) // created middleware so /posts is used in all routes in postRoutes
 
+app.get('/', (req,res) => {
+    res.send('Hello to Moments Api ')
+})
+
 //connect to mongoDB atlas
-const CONNECTION_URL = process.env.CONNECTION_URL // saved in env file for security 
-const PORT = process.env.PORT   //where this will run , in heroku it will use the PORT variable 
+//const CONNECTION_URL = process.env.CONNECTION_URL
+const PORT = process.env.PORT || 5000; //where this will run , in heroku it will use the PORT variable 
 
 //CONNECTING TO Database is a PROMISE FYI
-mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true }) //connect to you mongodb uri , the rest will stop errors and warning in terminal 
+mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true }) //connect to you mongodb uri , the rest will stop errors and warning in terminal 
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`) )) //if successfully connected 
     .catch((error)=>  console.log(error.message))   //if unsuccessful
 

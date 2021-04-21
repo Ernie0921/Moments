@@ -1,0 +1,38 @@
+create 2 folder in directory 
+client and server
+client: run 'npx create-react-app ./'    you may need the latest node
+server: create a index.js file then npm init 
+server: install-
+     body-parser (will allow us to do post req)
+     cors (will enable cross origin request)
+     express (routes)
+     mongoose (to create model for our posts)
+     nodemon (restart server when changes occurr)
+
+index.js - you need to import or require the packages you installed
+    import express from 'express'; 
+    or
+    const express = require('express);
+
+    *newer node lets you use import instead of require just do the following modification in the package.json file
+                            "main": "index.js",
+                            "type": "module",
+                            "scripts": {
+                                "start": "nodemon index.js"
+                            },
+client: npm install-
+    axios (make request)
+    moment (working with time )
+    react-file-base64 (to convert our images )
+    redux
+    redux-thunk( use to do asyncrounous actions using redux)
+    @material-ui/core ( use for styling in react popular)
+
+delete the existing src folder and make a new src folder 
+src: create a index.js file 
+
+src:create App.js file
+ you can write java in app.js that will render on browser 
+ run npm start in client terminal to see the app.js render on browsers
+ 
+ BACKEND move on the server side to connect to datqabse, create routes and models 
