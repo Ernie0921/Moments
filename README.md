@@ -1,23 +1,14 @@
 ## Moments
-A little info about your project and/ or overview that explains **what** the project is about.
+Allows Clients to save a postcard card with and image, brief description and location . The application was a way to allow users to share their travel experiences
 
+##link 
 https://capture-moments.netlify.app/
 
 ## Decription
-A little more description of what the project is about 
+The web application allows clients to create digital postcard to capture their travels. They can upload an image and short description to the card. The application is using MongoDB for it database and React as it front end framework. Netlify was used to deploy the client side while the database was deployed with Heroku. 
 
 ## Motivation
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
-
-## Challenges and Solutions
-## Build status
-Build status of continuous integration i.e. travis, appveyor etc. Ex. - 
-[![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://travis-ci.org/akashnimare/foco)
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://ci.appveyor.com/project/akashnimare/foco/branch/master)
-
-## Code style
-If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex. -
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+I wanted to create a mini social media application that allowed users to share a digital post card of their travels. 
 
 ## Screenshots
 Include logo/demo screenshot etc.
