@@ -11,7 +11,7 @@ The web application allows clients to create digital postcard to capture their t
 I wanted to create a mini social media application that allowed users to share a digital post card of their travels. 
 
 ## Screenshots
-Include logo/demo screenshot etc.
+![](./client/public/Screen Shot 2021-04-17 at 1.15.04 PM.png)
 
 ## Tech/framework used
 Ex. -
